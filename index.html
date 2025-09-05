@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>A.KHAN</title>
+  <meta name="theme-color" content="#0a0a0a"/>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon-192.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body class="bg-neutral-50 text-neutral-900">
+  <div id="root"></div>
+  <script type="text/babel">
+    const { useState } = React;
+
+    const App = () => (
+      <div className="max-w-3xl mx-auto px-4 py-6">
+        <h1 className="text-2xl font-bold text-red-600">A.KHAN Mobile Training</h1>
+        <p className="text-sm text-gray-600">District Farrukhabad, U.P. — 209625</p>
+        <ul className="mt-4 space-y-2">
+          <li>✅ Hardware Training</li>
+          <li>✅ Schematic Explanation</li>
+          <li>✅ eMMC / UFS Special</li>
+        </ul>
+        <div className="mt-6">
+          <a href="https://wa.me/919936182923" className="inline-block px-4 py-2 bg-red-600 text-white rounded-lg">Enroll via WhatsApp</a>
+        </div>
+      </div>
+    );
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js'));
+    }
+  </script>
+</body>
+</html>
